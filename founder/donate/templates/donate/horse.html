@@ -1,0 +1,30 @@
+{% extends "donate/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+    <div class="mobile-spacer"></div>
+    <div class="pub-cont" id="news">
+        <div class="pub">
+            <img src="{{ horse.image.url }}" class="pub-img-view">
+            <div class="pub-contents-view">
+                <h2 class="headline">{{ horse.name }}</h2>
+                <p class="desc">{{ horse.description }}</p>
+                <a class="donate-btn" href="">Donate</a>
+                <a class="home-btn" href="{% url 'index' %}">Home</a>
+            </div>
+        </div>
+    </div>
+    <h1>Other Horses</h1>
+    <div class="horse-cont" id="horse">
+        {% for horse in horses %}
+            <a href="{% url 'horse' horse.id %}">
+                <div class="horse">
+                    <img src="{{ horse.image.url }}" class="horse-img">
+                    <h2 class="name">{{ horse.name }}</h2>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}

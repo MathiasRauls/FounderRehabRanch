@@ -1,0 +1,72 @@
+{% extends "donate/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+    <h1 class="welcome" id="home">Welcome to Founder Rehab Ranch</h1>
+        {% for banner in banners %}
+        <!-- BANNER IMAGE -->
+            <div class="banner-cont">
+                <img src="{{ banner.image.url }}" class="banner-img">
+            </div>
+        {% endfor %}
+
+    <!-- DONATE BUTTON -->
+    <div class="donate-cont">
+    <!-- CHANGE HOME PAGE SUMMARY -->
+        <p class="donate-sum">Please donate to our wonderful horse rescue! Every penny is spent on improving the daily lives of the horses. We value any aid we can receive to purchase horse feed, enhance horse pens, and cover veterinary expenses.</p>
+        <a class="donate-btn" href="">Donate</a>
+    </div>
+    <div class="spacer"></div>
+
+    <!-- PUBLICATIONS DISPLAYED -->
+    <h1 id="news">Latest News</h1>
+    <div class="news-cont">
+        {% for publication in publications %}
+            <div class="news-pub">
+                <a href="{% url 'publication' publication.id %}">
+                    <img src="{{ publication.image.url }}" class="pub-img">
+                    <div class="pub-contents">
+                        <h2 class="headline">{{ publication.headline }}</h2>
+                        <p class="desc">{{ publication.description }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="spacer"></div>
+
+    <!-- HORSE DISPLAY -->
+    <h1 id="horse">Horses</h1>
+    <div class="horse-cont">
+        {% for horse in horses %}
+            <a href="{% url 'horse' horse.id %}">
+                <div class="horse">
+                    <img src="{{ horse.image.url }}" class="horse-img">
+                    <h2 class="name">{{ horse.name }}</h2>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    <div class="spacer"></div>
+
+    <!-- CHANGE ABOUT SECTION HERE -->
+    <h1 id="about">About Our Ranch</h1>
+    <div class="about-cont">
+
+        <!-- ABOUT PARAGRAPH HERE -->
+        <p>Passionate paragraph about the ranch.</p>
+    </div>
+
+    <!-- DISPLAY PEOPLE -->
+    <div class="people-cont">
+        {% for people in peoples %}
+            <div class="people">
+                <img src="{{ people.image.url }}" class="people-img">
+                <h2 class="name">{{ people.name }}</h2>
+                <h3 class="people-title">{{ people.title }}</h3>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="spacer"></div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "donate/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+    <div class="sml-spacer"></div>
+    <h1>Our Horses</h1>
+    <div class="horse-cont" id="horse">
+        {% for horse in horses %}
+            <a href="{% url 'horse' horse.id %}">
+                <div class="horse">
+                    <img src="{{ horse.image.url }}" class="horse-img">
+                    <h2 class="name">{{ horse.name }}</h2>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    <a class="donate-btn" href="">Donate</a>
+    <a class="home-btn" href="{% url 'index' %}">Home</a>
+
+{% endblock %}

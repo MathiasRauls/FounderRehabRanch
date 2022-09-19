@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'donate/app.js' %}"></script>
+    <link href="{% static 'donate/styles.css' %}" rel="stylesheet" type="text/css">
+    <title>Founder Rehab Ranch</title>
+</head>
+<body>
+    <div class="main-cont">
+        <ul class="navbar" id="nav">
+            <div class="logo-cont">
+                <img src="{% static 'donate/founder_logo.png' %}" class="site-logo" href="{% url 'index' %}">
+            </div>
+            <li>
+                <a href="{% url 'index' %}" class="navlink">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'index' %}#news" class="navlink">News</a>
+            </li>
+            <li>
+                <a href="{% url 'index' %}#horse" class="navlink">Horses</a>
+            </li>
+            <li>
+                <a href="{% url 'index' %}#about" class="navlink">About</a>
+            </li>
+            <li>
+                <a href="{% url 'index' %}#contact" class="navlink">Contact</a>
+            </li>
+            <li>
+                <a href="{% url 'gallery' %}" class="navlink">Gallery</a>
+            </li>
+        </ul>
+        <div class="spacer">spacer</div>
+        <div class="inner-cont">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION HERE -->
+    <div class="foot" id="contact">
+        <div class="foot-cont">
+            <a href="mailto:" class="foot-link">email@gmail.com</a>
+            <a href="mailto:" class="mail"><img class="svg" src="{% static 'donate/email.svg' %}"></a>
+            <a href="" class="facebook"><img class="svg" src="{% static 'donate/facebook.svg' %}"></a>
+            <!-- <a href="" class="tiktok"><img class="svg" src="{% static 'donate/tiktok.svg' %}"></a> -->
+            <a href="" class="insta"><img class="svg" src="{% static 'donate/instagram.svg' %}"></a>
+            <a href="tel:" class="foot-link">(123) 456-890</a><br>
+            <a href="{% url 'admin:index' %}" class="admin-btn">Admin</a><br>
+        </div>
+        <p class="copyright">© Copyright 2005, All Rights Reserved</p>
+    </div>
+    <script src=""></script>
+</body>
+</html>
