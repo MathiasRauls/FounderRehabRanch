@@ -1,0 +1,23 @@
+{% extends "donate/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+    <div class="sml-spacer"></div>
+    <h1>Latest News</h1>
+    <div class="news-cont">
+        {% for publication in publications %}
+            <div class="news-pub">
+                <a href="{% url 'publication' publication.id %}">
+                    <img src="{{ publication.image.url }}" class="pub-img">
+                    <div class="pub-contents">
+                        <h2 class="headline">{{ publication.headline }}</h2>
+                        <p class="desc">{{ publication.description }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="sml-spacer"></div>
+
+{% endblock %}

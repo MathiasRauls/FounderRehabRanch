@@ -3,24 +3,26 @@
 {% load static %}
 
 {% block body %}
-    <h1 class="welcome" id="home">Welcome to Founder Rehab Ranch</h1>
         {% for banner in banners %}
         <!-- BANNER IMAGE -->
-            <div class="banner-cont">
-                <img src="{{ banner.image.url }}" class="banner-img">
+            <div class="banner-img" style="background-image: url('{{ banner.image.url }}')">
+                <div class="banner-contents">
+                    <h1 class="welcome-header" id="home">Welcome to Founder<br/> Rehab Ranch</h1>
+                    <!-- DONATE CARD -->
+                    <div class="donate-cont">
+                    <!-- CHANGE HOME PAGE SUMMARY -->
+                        <img src="{% static 'donate/founder_logo.png' %}" class="site-logo-donate" href="{% url 'index' %}">
+                        <p class="donate-sum">Feel free to support our wonderful horse rescue! Every penny is spent on improving the daily lives of the horses. We value any aid we can receive to purchase horse feed, enhance horse pens, and cover veterinary expenses.</p>
+                        <a class="donate-btn" href="https://www.facebook.com/FounderRehab/">Support Cause</a>
+                    </div>
+                </div>
             </div>
         {% endfor %}
 
-    <!-- DONATE BUTTON -->
-    <div class="donate-cont">
-    <!-- CHANGE HOME PAGE SUMMARY -->
-        <p class="donate-sum">Please donate to our wonderful horse rescue! Every penny is spent on improving the daily lives of the horses. We value any aid we can receive to purchase horse feed, enhance horse pens, and cover veterinary expenses.</p>
-        <a class="donate-btn" href="">Donate</a>
-    </div>
-    <div class="spacer"></div>
+    <div class="spacer" ></div>
 
     <!-- PUBLICATIONS DISPLAYED -->
-    <h1 id="news">Latest News</h1>
+    <h1 class="sections" id="news">Latest News<hr></h1>
     <div class="news-cont">
         {% for publication in publications %}
             <div class="news-pub">
@@ -37,7 +39,7 @@
     <div class="spacer"></div>
 
     <!-- HORSE DISPLAY -->
-    <h1 id="horse">Horses</h1>
+    <h1 class="sections" id="horse">Horses<hr></h1>
     <div class="horse-cont">
         {% for horse in horses %}
             <a href="{% url 'horse' horse.id %}">
@@ -51,11 +53,11 @@
     <div class="spacer"></div>
 
     <!-- CHANGE ABOUT SECTION HERE -->
-    <h1 id="about">About Our Ranch</h1>
+    <h1 class="sections" id="about">About Our Ranch<hr></h1>
     <div class="about-cont">
 
         <!-- ABOUT PARAGRAPH HERE -->
-        <p>Passionate paragraph about the ranch.</p>
+        <p>In 2005 Beth Kennalley and Peggy Hetlage founded their non-profit Founder Rehab Ranch (FRR). FRR is a place where once neglected horses are truly cared for. All of our passionate volunteers help with feeding, washing, grooming, each and every horse. All [INSERT NUMBER OF HORSES] have roughly 25 acres of land for them to actually roam free.</p>
     </div>
 
     <!-- DISPLAY PEOPLE -->

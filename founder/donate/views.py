@@ -21,12 +21,20 @@ def index(request):
     peoples = People.objects.all()
     publications = Publication.objects.all()
 
+    banners = banners.order_by('id')[:1]
     horses = horses.order_by('name')[:6]
 
     return render(request, "donate/index.html", {
-        "banners": Banner.objects.all(),
+        "banners": banners,
         "horses": horses,
         "peoples": People.objects.all(),
+        "publications": Publication.objects.all(),
+    })
+
+# LATEST NEWS
+def news(request):
+    publications = Publication.objects.all()
+    return render(request, "donate/news.html", {
         "publications": Publication.objects.all(),
     })
 

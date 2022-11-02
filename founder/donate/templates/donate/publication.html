@@ -3,14 +3,13 @@
 {% load static %}
 
 {% block body %}
-    <div class="mobile-spacer"></div>
     <div class="pub-cont" id="news">
         <div class="pub">
             <img src="{{ pub.image.url }}" class="pub-img-view">
             <div class="pub-contents-view">
-                <h2 class="headline">{{ pub.headline }}</h2>
+                <h2 class="headline">{{ pub.headline }}<hr></h2>
                 <p class="desc">{{ pub.description }}</p>
-                <a class="donate-btn" href="">Donate</a>
+                <!-- <a class="donate-btn" href="https://www.facebook.com/FounderRehab/">Donate</a> -->
                 <a class="home-btn" href="{% url 'index' %}">Home</a>
             </div>
         </div>
