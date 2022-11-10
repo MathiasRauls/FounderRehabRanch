@@ -53,6 +53,7 @@ body {
 .sections hr {
     width: 15px;
     line-height: -20px;
+    background-color: var(--dark-og);
     border: 2px solid var(--dark-og);
 }
 
@@ -60,6 +61,7 @@ h2 hr {
     width: 50px;
     text-align: left;
     margin: 10px 0;
+    background-color: var(--dark-og);
     border: 2px solid var(--dark-og);
 }
 
@@ -200,6 +202,25 @@ h2 hr {
     text-align: center;
 }
 
+@media screen and (max-width: 555px) {
+    .welcome-header {
+        margin-top: 100px;
+    }
+
+    .banner-contents {
+        width: 75%;
+        float: none;
+    }
+
+    .donate-cont {
+        margin: 0 auto;
+    }
+
+    .donate-sum {
+        font-size: 1rem;
+    }
+}
+
 .donate-btn {
     margin: 20px auto;
     color: white;
@@ -238,6 +259,77 @@ h2 hr {
     padding: 10px;
 }
 
+/****************************** EVENTS */
+
+.event-cont {
+    gap: 20px;
+    display: flex;
+    padding: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.event {
+    transition: all .2s ease-in-out;
+    background-color: var(--mid-tan);
+    padding: 30px 40px;
+    width: 400px;
+    color: black;
+}
+.event:hover {
+    background-color: var(--mid-dark-tan);
+    border-color: transparent;
+    cursor: pointer;
+}
+.event-view {
+    margin: 60px auto;
+    width: 620px;
+    gap: 20px;
+    display: flex;
+    padding: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s ease-in-out;
+    background-color: var(--mid-tan);
+}
+
+.event-view .headline {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.event a {
+    text-decoration: none;
+    padding: 30px 30px;
+    color: black;
+}
+
+.event-img {
+    margin: auto;
+    max-width: 100%;
+    display: block;
+    margin-top: 15px;
+}
+
+.event-img-view-cont {
+    flex-basis: 34%;
+    order: 0;
+}
+
+.event-img-view {
+    width: 100%;
+}
+
+.event-text {
+    color: var(--dark-og);
+}
+
+.event-contents-view {
+    width: 300px;
+}
+
 /****************************** NEWS */
 
 .news-cont {
@@ -254,12 +346,11 @@ h2 hr {
     background-color: var(--mid-tan);
     padding: 30px 20px;
     width: 300px;
-    color: black;
 }
 
 .news-pub a {
     text-decoration: none;
-    color: black;
+    color: var(--dark-og);
 }
 
 .news-pub:hover {
@@ -280,6 +371,18 @@ h2 hr {
 }
 
 .desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.desc-view {
+    font-weight: 400;
+}
+
+.date {
+    font-weight: bold;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -512,7 +615,6 @@ svg:hover {
     }
 
     .site-logo {
-        width: 210px;
         display: block;
         margin: 0 auto;
         padding-top: 20px;
@@ -535,6 +637,6 @@ svg:hover {
     }
 
     .main-cont h1 {
-        font-size: 35px;
+        font-size: 1.4rem;
     }
 }

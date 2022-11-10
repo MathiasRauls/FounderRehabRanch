@@ -21,6 +21,25 @@
 
     <div class="spacer" ></div>
 
+    <!-- EVENT CAROUSEL -->
+    <h1 class="sections" id="events">Events<hr></h1>
+    <div class="event-cont">
+        {% for event in events %}
+            <div class="event">
+                <a class="event-link" href="{% url 'event' event.id %}">
+                    <img class="event-img" src="{{ event.image.url }}">
+                    <div class="event-text">
+                        <h2 class="event-title">{{ event.title }}</h2>
+                        <p class="desc">{{ event.description }}</p>
+                        <p class="date">{{ event.date }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="spacer" ></div>
+
     <!-- PUBLICATIONS DISPLAYED -->
     <h1 class="sections" id="news">Latest News<hr></h1>
     <div class="news-cont">

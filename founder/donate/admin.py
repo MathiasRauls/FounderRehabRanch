@@ -5,8 +5,12 @@ class BannerAdmin(admin.ModelAdmin):
     list_display = ("id", "image",)
     readonly_fields = ("note",)
 
+class EventAdmin(admin.ModelAdmin):
+    list_display = ("id", "image", "title", "date", "location", "description",)
+    readonly_fields = ("note",)
+
 class PublicationAdmin(admin.ModelAdmin):
-    list_display = ("id", "image", "headline", "description",)
+    list_display = ("id", "image", "headline", "date", "description",)
     readonly_fields = ("note",)
 
 class PeopleAdmin(admin.ModelAdmin):
@@ -18,6 +22,7 @@ class HorseAdmin(admin.ModelAdmin):
     readonly_fields = ("note",)
 
 admin.site.register(Banner, BannerAdmin)
+admin.site.register(Event, EventAdmin)
 admin.site.register(Publication, PublicationAdmin)
 admin.site.register(People, PeopleAdmin)
 admin.site.register(Horse, HorseAdmin)
