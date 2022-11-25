@@ -6,7 +6,7 @@ class BannerAdmin(admin.ModelAdmin):
     readonly_fields = ("note",)
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ("id", "image", "title", "date", "location", "description",)
+    list_display = ("id", "image", "title", "date", "time", "location", "description",)
     readonly_fields = ("note",)
 
 class PublicationAdmin(admin.ModelAdmin):

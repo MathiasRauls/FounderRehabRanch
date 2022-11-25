@@ -1,0 +1,27 @@
+{% extends "donate/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+    <div class="event-cont" id="news">
+        <div class="event-view">
+            <div class="event-img-view-cont">
+                <img src="{{ event.image.url }}" class="event-img-view">
+            </div>
+            <div class="event-contents-view">
+                <h2 class="headline">{{ event.title }}<hr></h2>
+                <p class="desc-view">{{ event.description }}</p>
+                <p class="date">
+                    <span style="font-weight: 400;">{{ event.location }}</span><br/>
+                    <span style="font-size: 1.2rem;">{{ event.date }}</span><br/>
+                    <span class="time">{{ event.time }}</span><br/>
+                </p>
+                <!-- <a class="donate-btn" href="https://www.facebook.com/FounderRehab/">Donate</a> -->
+                <a class="home-btn" href="{% url 'index' %}">Home</a>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

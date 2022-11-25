@@ -18,6 +18,7 @@ class Event(models.Model):
     image = models.ImageField(upload_to="images/", null=False, blank=False)
     note = models.CharField(max_length=100, default='Image Dimensions 2000px X 2000px', editable=False)
     date = models.DateField(_("Event Date"), default=datetime.date.today, editable=True, blank=False)
+    time = models.CharField(max_length=10, null=False, blank=False, default="9AM")
     title = models.CharField(max_length=300, null=False, blank=False)
     location = models.CharField(max_length=300, null=False, blank=False, default='Founder Rehab Ranch')
     description = models.TextField(max_length=1000, null=False, blank=False, default="Don't forget to add a Description!")

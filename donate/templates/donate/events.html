@@ -1,0 +1,24 @@
+{% extends "donate/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+    <div class="sml-spacer"></div>
+    <h1>Events</h1>
+    <div class="event-cont">
+        {% for event in events %}
+            <div class="event">
+                <a class="event-link" href="{% url 'event' event.id %}">
+                    <img class="event-img" src="{{ event.image.url }}">
+                    <div class="event-text">
+                        <h2 class="event-title">{{ event.title }}</h2>
+                        <p class="desc">{{ event.description }}</p>
+                        <p class="date">{{ event.date }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="sml-spacer"></div>
+
+{% endblock %}

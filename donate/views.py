@@ -22,7 +22,7 @@ def index(request):
     events = Event.objects.all()
     publications = Publication.objects.all()
 
-    events = events.order_by('date')[:2]
+    events = events.order_by('date')
     publications = publications.order_by('date')[:3]
     banners = banners.order_by('id')[:1]
     horses = horses.order_by('name')[:6]
@@ -35,11 +35,18 @@ def index(request):
         "publications": Publication.objects.all(),
     })
 
-# EVENTS
+# EVENT
 def event(request, event_id):
     event = Event.objects.get(pk=event_id)
     return render(request, "donate/event.html", {
         "event": event,
+    })
+
+# EVENTS
+def events(request):
+    publications = Publication.objects.all()
+    return render(request, "donate/events.html", {
+        "events": Event.objects.all(),
     })
 
 # LATEST NEWS
