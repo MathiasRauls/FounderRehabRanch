@@ -1,6 +1,6 @@
 # Founder Rehab Ranch Website 🐎
 
-![alt text](https://github.com/MathiasRauls/FounderRehabRanch/blob/main/Home.PNG)
+![Founder Rehab Ranch website repo cover.](https://github.com/MathiasRauls/FounderRehabRanch/blob/main/Home.PNG)
 
 ## Project Overview
 This website is home to the non-profit, Founder Rehab Ranch, which started in 2005. FRR uses this site to collect donations, share recent news, and shoecase their beautiful horses.
